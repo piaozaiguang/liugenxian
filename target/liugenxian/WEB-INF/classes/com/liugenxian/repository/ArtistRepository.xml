@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liugenxian.repository.ArtistRepository">
+	<select id="selectList" parameterType="SearchParam" resultType="Artist">
+		<![CDATA[
+		SELECT
+			artist_no AS artistNo,
+			region AS artistRegion,
+			artist_name AS artistName,
+			artist_idx AS artistIdx
+		FROM artist
+		]]>
+	</select>
+	<select id="selectDetail" parameterType="long" resultType="Artist">
+		SELECT
+			artist_no AS artistNo,
+			region AS artistRegion,
+			artist_name AS artistName,
+			artist_idx AS artistIdx
+		FROM artist
+		WHERE artist_no = #{artistNo}
+	</select>
+	<select id="selectDetailByName" parameterType="string" resultType="Artist">
+		SELECT
+			artist_no AS artistNo,
+			region AS artistRegion,
+			artist_name AS artistName,
+			artist_idx AS artistIdx
+		FROM artist
+		WHERE artist_name = #{artistName}
+	</select>
+	<insert id="save" parameterType="Artist" useGeneratedKeys="true" keyProperty="artistNo">
+		INSERT INTO artist (
+			artist_no,
+			region,
+			artist_name,
+			artist_idx
+		) VALUES (
+			#{artistNo},
+			#{artistRegion},
+			#{artistName},
+			#{artistIdx}
+		)
+	</insert>
+	<update id="update" parameterType="Artist">
+		UPDATE artist
+		SET
+			region = #{artistRegion},
+			artist_name = #{artistName},
+			artist_idx = #{artistIdx}
+		WHERE
+			artist_no = #{artistNo}
+	</update>
+	<select id="selectTotalCount" resultType="int">
+		SELECT count(*) FROM artist
+	</select>
+</mapper>
