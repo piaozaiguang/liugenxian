@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk: 1.6.0_43
-Built-By: piaozg
+Build-Jdk: 1.7.0_67
+Built-By: piaozaiguang
 Created-By: Maven Integration for Eclipse
 
