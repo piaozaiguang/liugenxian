@@ -41,6 +41,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
 	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
+    	<!-- 
     	<div class="uk-navbar-center">
     		<div class="uk-navbar-content">
     			<form class="uk-form uk-display-inline-block">
@@ -52,6 +53,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	            </form>
     		</div>
     	</div>
+    	 -->
     </nav>
 </div>
 <div class="uk-container uk-container-center uk-margin">
@@ -95,34 +97,34 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 			</div>
 			<ul class="uk-list uk-list-space">
 				<li>
-					<a href>华语男</a>
+					<a href="/tab/list">华语男</a>
 				</li>
 				<li>
-					<a href>华语女</a>
+					<a href="/tab/list">华语女</a>
 				</li>
 				<li>
-					<a href>华语组合</a>
+					<a href="/tab/list">华语组合</a>
 				</li>
 				<li>
-					<a href>欧美男</a>
+					<a href="/tab/list">欧美男</a>
 				</li>
 				<li>
-					<a href>欧美女</a>
+					<a href="/tab/list">欧美女</a>
 				</li>
 				<li>
-					<a href>欧美组合</a>
+					<a href="/tab/list">欧美组合</a>
 				</li>
 				<li>
-					<a href>日韩男</a>
+					<a href="/tab/list">日韩男</a>
 				</li>
 				<li>
-					<a href>日韩女</a>
+					<a href="/tab/list">日韩女</a>
 				</li>
 				<li>
-					<a href>日韩组合</a>
+					<a href="/tab/list">日韩组合</a>
 				</li>
 				<li>
-					<a href>其他</a>
+					<a href="/tab/list">其他</a>
 				</li>
 			</ul>
 		</div>

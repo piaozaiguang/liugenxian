@@ -39,6 +39,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
 	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
+    	<!-- 
     	<div class="uk-navbar-center">
     		<div class="uk-navbar-content">
     			<form class="uk-form uk-display-inline-block">
@@ -50,6 +51,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	            </form>
     		</div>
     	</div>
+    	 -->
     </nav>
 </div>
 
@@ -77,20 +79,20 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 		<div class="uk-width-1-5 uk-margin" style="top:100px;">
 			<table class="uk-table">
 				<tr>
-					<th>吉他谱名</td>
+					<th>吉他谱名</th>
 					<td>${detail.title}</td>
 				</tr>
 				<tr>
-					<th>艺术家</td>
-					<td><a href>${detail.artist}</a></td>
+					<th>艺术家</th>
+					<td>${detail.artist}</td>
 				</tr>
 				<tr>
-					<th>供谱者</td>
-					<td><a href>${detail.creator}</a></td>
+					<th>供谱者</th>
+					<td>${detail.creator}</td>
 				</tr>
 				<tr>
-					<th>分类</td>
-					<td><a href>${detail.tabCategory.text}</a></td>
+					<th>分类</th>
+					<td>${detail.tabCategory.text}</td>
 				</tr>
 			</table>
 			<c:if test="${detail.xiamiSid != 0}">
