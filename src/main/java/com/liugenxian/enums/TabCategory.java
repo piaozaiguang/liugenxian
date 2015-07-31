@@ -2,6 +2,7 @@ package com.liugenxian.enums;
 
 public enum TabCategory {
 	
+	ALL("ALL", "全部"),
 	FINGER("FINGER", "指弹谱"),
 	SONG("SONG", "弹唱谱");
 	

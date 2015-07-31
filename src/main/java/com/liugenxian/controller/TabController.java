@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.liugenxian.enums.ArtistRegion;
 import com.liugenxian.enums.SortType;
+import com.liugenxian.enums.TabCategory;
 import com.liugenxian.service.TabService;
 
 /**
@@ -28,9 +30,15 @@ public class TabController {
 	private TabService tabService;
 
 	@RequestMapping("/list")
-	public ModelAndView index(@RequestParam(value = "page", defaultValue = "0", required = false) int page) {
+	public ModelAndView list(@RequestParam(value = "page", defaultValue = "0", required = false) int page,
+								@RequestParam(value = "tabCategory", defaultValue = "ALL", required = false) TabCategory tabCategory,
+								@RequestParam(value = "artistRegion", defaultValue = "ALL", required = false) ArtistRegion artistRegion,
+								@RequestParam(value = "artistName", defaultValue = "", required = false) String artistName) {
 		return new ModelAndView("tab_list")
-			.addObject("paging", tabService.getTabList(page, SortType.LATEST));
+			.addObject("paging", tabService.getTabList(page, tabCategory, artistRegion, artistName, SortType.LATEST))
+			.addObject("tabCategory", tabCategory)
+			.addObject("artistRegion", artistRegion)
+			.addObject("artistName", artistName);
 	}
 	
 	@RequestMapping("/detail/{tabNo}")

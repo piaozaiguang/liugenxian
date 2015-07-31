@@ -13,7 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.liugenxian.enums.ArtistRegion;
 import com.liugenxian.enums.SortType;
+import com.liugenxian.enums.TabCategory;
 import com.liugenxian.service.PostService;
 import com.liugenxian.service.TabService;
 
@@ -35,7 +37,7 @@ public class IndexController {
 		return new ModelAndView("home")
 			.addObject("latestPost", postService.getPostList(0, SortType.LATEST))
 			.addObject("popularPost", postService.getPostList(0, SortType.POPULAR))
-			.addObject("latestTab", tabService.getTabList(0, SortType.LATEST))
-			.addObject("popularTab", tabService.getTabList(0, SortType.POPULAR));
+			.addObject("latestTab", tabService.getTabList(0, TabCategory.ALL, ArtistRegion.ALL, "", SortType.LATEST))
+			.addObject("popularTab", tabService.getTabList(0, TabCategory.ALL, ArtistRegion.ALL, "", SortType.POPULAR));
 	}
 }

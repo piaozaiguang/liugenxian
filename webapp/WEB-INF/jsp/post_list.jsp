@@ -38,8 +38,8 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
     	<ul class="uk-navbar-nav">
     		<li><a href="/"><label class="uk-icon-home"></label>主页</a></li>
     		<li class="uk-active"><a href="/post/list"><label class="uk-icon-file-text-o"></label>文章</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
+	    	<li><a href="/tab/list?tabCategory=FINGER"><label class="uk-icon-music"></label>指弹谱</a></li>
+	    	<li><a href="/tab/list?tabCategory=SONG"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
     </nav>
 </div>

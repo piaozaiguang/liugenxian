@@ -3,10 +3,13 @@ package com.liugenxian.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.liugenxian.enums.ArtistRegion;
 import com.liugenxian.enums.SortType;
+import com.liugenxian.enums.TabCategory;
 import com.liugenxian.model.Artist;
 import com.liugenxian.model.Pagination;
 import com.liugenxian.model.SearchParam;
+import com.liugenxian.model.TabSearchParam;
 import com.liugenxian.model.Tablature;
 import com.liugenxian.model.admin.AdminTablature;
 import com.liugenxian.repository.ArtistRepository;
@@ -34,12 +37,15 @@ public class TabService {
 		tabRepository.save(adminTab);
 	}
 	
-	public Pagination<Tablature> getTabList(int pageNo, SortType sortType) {
-		SearchParam param = new SearchParam(pageNo);
+	public Pagination<Tablature> getTabList(int pageNo, TabCategory tabCategory, ArtistRegion artistRegion, String artistName, SortType sortType) {
+		TabSearchParam param = new TabSearchParam(pageNo);
 		param.setSortType(sortType);
+		param.setArtistName(artistName);
+		param.setArtistRegion(artistRegion);
+		param.setTabCategory(tabCategory);
 		Pagination<Tablature> paging = new Pagination<Tablature>();
 		paging.setList(tabRepository.selectList(param));
-		paging.setTotalCount(tabRepository.selectTotalCount());
+		paging.setTotalCount(tabRepository.selectTotalCount(param));
 		paging.setCurrentPage(pageNo == 0 ? 1 : pageNo);
 		return paging;
 	}

@@ -38,8 +38,8 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
     	<ul class="uk-navbar-nav">
     		<li><a href="/"><label class="uk-icon-home"></label>主页</a></li>
     		<li><a href="/post/list"><label class="uk-icon-file-text-o"></label>文章</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
+	    	<li <c:if test="${tabCategory == 'FINGER'}">class="uk-active"</c:if>><a href="/tab/list?tabCategory=FINGER"><label class="uk-icon-music"></label>指弹谱</a></li>
+	    	<li <c:if test="${tabCategory == 'SONG'}">class="uk-active"</c:if>><a href="/tab/list?tabCategory=SONG"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
     	<!-- 
     	<div class="uk-navbar-center">
@@ -72,7 +72,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 			    	<c:forEach items="${paging.list}" var="list">
 				    	<tr>
 				            <td><a href="/tab/detail/${list.tabNo}" title="${list.title}"><c:out value="${list.titleShort}"></c:out></a></td>
-				            <td><c:out value="${list.artist}"></c:out></td>
+				            <td><a href="/tab/list?artistName=<c:out value="${list.artist}"></c:out>" title="<c:out value="${list.artist}"></c:out>"><c:out value="${list.artist}"></c:out></a></td>
 				            <td><c:out value="${list.creator}"></c:out></td>
 				            <td><c:out value="${list.viewCnt}"></c:out></td>
 				        </tr>
@@ -85,49 +85,52 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 						<li class="uk-active"><span>${pageNo}</span></li>
 					</c:if>
 					<c:if test="${paging.currentPage != pageNo}">
-						<li><a href="?page=${pageNo}">${pageNo}</a></li>
+						<li><a href="?tabCategory=${tabCategory}&artistRegion=${artistRegion}&artistName=${artistName}&page=${pageNo}">${pageNo}</a></li>
 					</c:if>
-					
 				</c:forEach>
 			</ul>
 		</div>
+		
 		<div class="uk-width-1-5">
-			<div class="uk-width-1-1">
-				<h3>艺术家索引</h3>
-			</div>
-			<ul class="uk-list uk-list-space">
-				<li>
-					<a href="/tab/list">华语男</a>
-				</li>
-				<li>
-					<a href="/tab/list">华语女</a>
-				</li>
-				<li>
-					<a href="/tab/list">华语组合</a>
-				</li>
-				<li>
-					<a href="/tab/list">欧美男</a>
-				</li>
-				<li>
-					<a href="/tab/list">欧美女</a>
-				</li>
-				<li>
-					<a href="/tab/list">欧美组合</a>
-				</li>
-				<li>
-					<a href="/tab/list">日韩男</a>
-				</li>
-				<li>
-					<a href="/tab/list">日韩女</a>
-				</li>
-				<li>
-					<a href="/tab/list">日韩组合</a>
-				</li>
-				<li>
-					<a href="/tab/list">其他</a>
-				</li>
-			</ul>
+			<c:if test="${tabCategory == 'SONG'}">
+				<div class="uk-width-1-1">
+					<h3>艺术家索引</h3>
+				</div>
+				<ul class="uk-list uk-list-space">
+					<li>
+						<a href="/tab/list?artistRegion=CN_MAN">华语男</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=CN_WOMEN">华语女</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=CN_GROUP">华语组合</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=EU_MAN">欧美男</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=EU_WOMEN">欧美女</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=EU_GROUP">欧美组合</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=JK_MAN">日韩男</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=JK_WOMEN">日韩女</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=JK_GROUP">日韩组合</a>
+					</li>
+					<li>
+						<a href="/tab/list?artistRegion=OTHER">其他</a>
+					</li>
+				</ul>
+			</c:if>
 		</div>
+		
 	</div>
 </div>
 <jsp:include page="footer.jsp"></jsp:include>

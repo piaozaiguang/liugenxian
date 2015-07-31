@@ -87,7 +87,7 @@ public class AdminController {
 	@RequestMapping("/tab/list")
 	public ModelAndView tabList(@RequestParam(value = "page", defaultValue = "0", required = false) int page) {
 		return new ModelAndView("admin_tab_list")
-				.addObject("paging", tabService.getTabList(page, SortType.LATEST));
+				.addObject("paging", tabService.getTabList(page, TabCategory.ALL, ArtistRegion.ALL, "", SortType.LATEST));
 	}
 	
 	@RequestMapping("/tab/new")

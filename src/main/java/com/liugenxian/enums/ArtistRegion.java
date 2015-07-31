@@ -2,6 +2,7 @@ package com.liugenxian.enums;
 
 public enum ArtistRegion {
 	
+	ALL("ALL", "全部"),
 	CN_MAN("CN_MAN", "华语男"),
 	CN_WOMEN("CN_WOMEN", "华语女"),
 	CN_GROUP("CN_GROUP", "华语组合"),

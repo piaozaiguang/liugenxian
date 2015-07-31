@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.liugenxian.repository.TabRepository">
-	<select id="selectList" parameterType="SearchParam" resultType="Tablature">
+	<select id="selectList" parameterType="TabSearchParam" resultType="Tablature">
 		SELECT
-			tab_no AS tabNo,
-			category AS tabCategory,
-			title AS title,
-			artist AS artist,
-			content AS content,
-			view_cnt AS viewCnt,
-			creator AS creator,
-			mod_ymdt AS modYmdt
-		FROM tablature
+			t.tab_no AS tabNo,
+			t.category AS tabCategory,
+			t.title AS title,
+			t.artist AS artist,
+			t.content AS content,
+			t.view_cnt AS viewCnt,
+			t.creator AS creator,
+			t.mod_ymdt AS modYmdt
+		FROM tablature t
+		<if test="artistRegion != null and artistRegion.code != 'ALL'">
+			LEFT JOIN artist a ON t.artist = a.artist_name
+		</if>
+		WHERE 1 = 1
+		<if test="tabCategory != null and tabCategory.code != 'ALL'">
+			AND t.category = #{tabCategory.code}
+		</if>
+		<if test="artistName != null and artistName != ''">
+			AND t.artist = #{artistName}
+		</if>
+		<if test="artistRegion != null and artistRegion.code != 'ALL'">
+			AND a.region = #{artistRegion.code}
+		</if>
 		<if test="sortType.code == 'COUNT'">
-			ORDER BY view_cnt DESC, mod_ymdt DESC
+			ORDER BY t.view_cnt DESC, t.mod_ymdt DESC
 		</if>
 		<if test="sortType.code == 'DATE'">
-			ORDER BY mod_ymdt DESC
+			ORDER BY t.mod_ymdt DESC
 		</if>
 		LIMIT #{offset}, #{pageSize}
 	</select>
@@ -64,8 +77,21 @@
 			xiami_sid = #{xiamiSid},
 			mod_ymdt = NOW()
 	</insert>
-	<select id="selectTotalCount" resultType="int">
-		SELECT count(*) FROM tablature
+	<select id="selectTotalCount" parameterType="TabSearchParam" resultType="int">
+		SELECT count(*) FROM tablature t 
+		<if test="artistRegion != null and artistRegion.code != 'ALL'">
+			LEFT JOIN artist a ON t.artist = a.artist_name
+		</if>
+		WHERE 1 = 1
+		<if test="tabCategory != null and tabCategory.code != 'ALL'">
+			AND t.category = #{tabCategory.code}
+		</if>
+		<if test="artistName != null and artistName != ''">
+			AND t.artist = #{artistName}
+		</if>
+		<if test="artistRegion != null and artistRegion.code != 'ALL'">
+			AND a.region = #{artistRegion.code}
+		</if>
 	</select>
 	<update id="updateViewCnt" parameterType="long">
 		UPDATE tablature

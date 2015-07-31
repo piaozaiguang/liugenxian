@@ -38,8 +38,8 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
     	<ul class="uk-navbar-nav">
     		<li class="uk-active"><a href="/"><label class="uk-icon-home"></label>主页</a></li>
     		<li><a href="/post/list"><label class="uk-icon-file-text-o"></label>文章</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
-	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
+	    	<li><a href="/tab/list?tabCategory=FINGER"><label class="uk-icon-music"></label>指弹谱</a></li>
+	    	<li><a href="/tab/list?tabCategory=SONG"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
     </nav>
 </div>
@@ -114,8 +114,8 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 					    	<c:forEach items="${latestTab.list}" var="latestTab"> 
 					    		<tr>
 						            <td><a href="/tab/detail/${latestTab.tabNo}" title="${latestTab.title}">${latestTab.titleShort}</a></td>
-						            <td>${latestTab.artist}</td>
-						            <td>${latestTab.tabCategory.text}</td>
+						            <td><a href="/tab/list?artistName=${latestTab.artist}" title="${latestTab.artist}">${latestTab.artist}</a></td>
+						            <td><a href="/tab/list?tabCategory=${latestTab.tabCategory.code}" title="${latestTab.tabCategory.text}">${latestTab.tabCategory.text}</a></td>
 						        </tr>
 					    	</c:forEach>
 					    </tbody>
@@ -134,8 +134,8 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 					    	<c:forEach items="${popularTab.list}" var="popularTab"> 
 					    		<tr>
 						            <td><a href="/tab/detail/${popularTab.tabNo}" title="${popularTab.title}">${popularTab.titleShort}</a></td>
-						            <td>${popularTab.artist}</td>
-						            <td>${popularTab.tabCategory.text}</td>
+						            <td><a href="/tab/list?artistName=${popularTab.artist}" title="${popularTab.artist}">${popularTab.artist}</a></td>
+						            <td><a href="/tab/list?tabCategory=${popularTab.tabCategory.code}" title="${popularTab.tabCategory.text}">${popularTab.tabCategory.text}</a></td>
 						        </tr>
 					    	</c:forEach>
 					    </tbody>

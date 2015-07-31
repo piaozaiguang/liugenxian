@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
-import com.liugenxian.model.SearchParam;
+import com.liugenxian.model.TabSearchParam;
 import com.liugenxian.model.Tablature;
 import com.liugenxian.model.admin.AdminTablature;
 
@@ -17,7 +17,7 @@ public interface TabRepository {
 	 * @param param
 	 * @return
 	 */
-	List<Tablature> selectList(SearchParam param);
+	List<Tablature> selectList(TabSearchParam param);
 	
 	/**
 	 * selectDetail
@@ -34,9 +34,10 @@ public interface TabRepository {
 	
 	/**
 	 * selectTotalCount
+	 * @param param
 	 * @return
 	 */
-	int selectTotalCount();
+	int selectTotalCount(TabSearchParam param);
 	
 	/**
 	 * updateViewCnt
