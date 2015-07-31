@@ -2,3 +2,6 @@ User-agent: *
 Disallow: /admin/
 Disallow: /login.jsp
 Disallow: /login
+Disallow: /monitor.jsp
+Disallow: /memory.jsp
+Disallow: /index.jsp

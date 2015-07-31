@@ -32,7 +32,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 </script>
 </head>
 <body>
-<img style="padding-left:10px;" alt="六根弦" src="/imgs/logo-new.png">
+<img style="padding-left:10px;" title="六根弦" alt="六根弦" src="/imgs/liugenxian_logo.png">
 <div data-uk-sticky>
 	<nav class="uk-navbar">
     	<ul class="uk-navbar-nav">
@@ -41,17 +41,6 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    	<li><a href="/tab/list"><label class="uk-icon-music"></label>指弹谱</a></li>
 	    	<li><a href="/tab/list"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
-    	<div class="uk-navbar-center">
-    		<div class="uk-navbar-content">
-    			<form class="uk-form uk-display-inline-block">
-    				<div class="uk-form-icon">
-    					<li class="uk-icon-search"></li>
-	            		<input class="uk-form-width-medium" type="text" placeholder="曲名/歌手名">
-	            	</div>
-	    			<button class="uk-button">搜索</button>
-	            </form>
-    		</div>
-    	</div>
     </nav>
 </div>
 <div class="uk-container uk-container-center uk-margin">
@@ -156,16 +145,6 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    </div>
 	</div>
 </div>
-<a id="goTop" class="uk-button" data-uk-smooth-scroll="" style="right:30px;bottom:30px;position:fixed;display:none;">
-	<li class="uk-icon-chevron-up"></li>
-</a>
-<nav class="uk-navbar">
-	<div class="uk-container uk-container-center uk-text-center" style="padding:25px 0;">
-        <div class="uk-panel">
-            <label class="uk-icon-envelope"></label>zaiguang.piao@gmail.com
-            <h2 class="liugenxian">六根弦</h2>
-        </div>
-    </div>
-</nav>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

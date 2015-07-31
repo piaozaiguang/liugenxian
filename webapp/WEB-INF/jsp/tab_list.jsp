@@ -130,16 +130,6 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 		</div>
 	</div>
 </div>
-<a id="goTop" class="uk-button" data-uk-smooth-scroll="" style="right:30px;bottom:30px;position:fixed;display:none;">
-	<li class="uk-icon-chevron-up"></li>
-</a>
-<nav class="uk-navbar">
-	<div class="uk-container uk-container-center uk-text-center" style="padding:25px 0;">
-        <div class="uk-panel">
-            <label class="uk-icon-envelope"></label>zaiguang.piao@gmail.com
-            <h2 class="liugenxian">六根弦</h2>
-        </div>
-    </div>
-</nav>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
