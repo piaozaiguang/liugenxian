@@ -92,7 +92,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 		</div>
 		
 		<div class="uk-width-1-5">
-			<c:if test="${tabCategory == 'SONG'}">
+			<c:if test="${tabCategory != 'FINGER'}">
 				<div class="uk-width-1-1">
 					<h3>艺术家索引</h3>
 				</div>
