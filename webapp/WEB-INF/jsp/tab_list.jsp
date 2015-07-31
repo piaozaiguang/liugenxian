@@ -4,7 +4,18 @@
 <html lang="zh-cn">
 <head>
 <meta charset="UTF-8">
+<c:if test="${artistRegion != 'ALL'}">
+<title>${artistRegion.text} 吉他谱列表|六根弦</title>
+</c:if>
+<c:if test="${artistName != ''}">
+<title>${artistName} 吉他谱列表|六根弦</title>
+</c:if>
+<c:if test="${tabCategory != 'ALL'}">
+<title>${tabCategory.text}列表|六根弦</title>
+</c:if>
+<c:if test="${artistRegion == 'ALL' && artistName == '' && tabCategory == 'ALL'}">
 <title>吉他谱列表|六根弦</title>
+</c:if>
 <link rel="stylesheet" href="/css/uikit.min.css" />
 <link rel="stylesheet" href="/css/addons/uikit.addons.min.css" />
 <script src="/js/jquery.min.js"></script>
