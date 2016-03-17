@@ -31,6 +31,7 @@
 	<mvc:resources location="/js/" mapping="/js/**"/>
 	<mvc:resources location="/imgs/" mapping="/imgs/**"/>
 	<mvc:resources location="/ueditor/" mapping="/ueditor/**"/>
+	<mvc:resources location="/error/" mapping="/error/**"/>
 	<mvc:resources location="/" mapping="/robots.txt"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

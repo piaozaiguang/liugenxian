@@ -3,6 +3,14 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>liugenxian.com</display-name>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/404.html</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.lang.Exception</exception-type>
+		<location>/error/500.html</location>
+	</error-page>
 	<!-- Spring ApplicationContext Loading -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
