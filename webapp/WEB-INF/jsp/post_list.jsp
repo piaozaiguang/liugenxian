@@ -47,7 +47,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	<article class="uk-article">
 		<c:forEach items="${paging.list}" var="list">
 	    	<h1 class="uk-article-title" title="${list.title}">${list.titleShort}</h1>
-	    	<p class="uk-article-meta"><joda:format value="${list.modYmdt}" style="SM"/> ${list.creator}</p>
+	    	<p class="uk-article-meta"><joda:format value="${list.modYmdt}" style="FM"/> ${list.creator}</p>
 		    <p>
 			    ${list.contentShort}
 			</p>

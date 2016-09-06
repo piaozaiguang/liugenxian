@@ -65,7 +65,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 					    	<c:forEach items="${latestPost.list}" var="latestPost">
 					    		<tr>
 						            <td><a href="/post/detail/${latestPost.postNo}" title="${latestPost.title}">${latestPost.titleShort}</a></td>
-						            <td><joda:format value="${latestPost.modYmdt}" style="SM"/></td>
+						            <td><joda:format value="${latestPost.modYmdt}" style="MM"/></td>
 						            <td>${latestPost.viewCnt}</td>
 					        	</tr>
 					    	</c:forEach>
@@ -85,7 +85,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 					    	<c:forEach items="${popularPost.list}" var="popularPost">
 					    		<tr>
 						            <td><a href="/post/detail/${popularPost.postNo}" title="${popularPost.title}">${popularPost.titleShort}</a></td>
-						            <td><joda:format value="${popularPost.modYmdt}" style="SM"/></td>
+						            <td><joda:format value="${popularPost.modYmdt}" style="MM"/></td>
 						            <td>${popularPost.viewCnt}</td>
 					        	</tr>
 					    	</c:forEach>

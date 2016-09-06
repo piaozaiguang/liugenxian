@@ -45,7 +45,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 <div class="uk-container uk-container-center uk-margin">
 	<article class="uk-article">
 		<h1 class="uk-article-title">${postDetail.title}</h1>
-	    <p class="uk-article-meta"><joda:format value="${postDetail.modYmdt}" style="SM"/> ${postDetail.creator}</p>
+	    <p class="uk-article-meta"><joda:format value="${postDetail.modYmdt}" style="FM"/> ${postDetail.creator}</p>
 	    <hr class="uk-article-divider">
 	    <p>
 		    ${postDetail.content}
