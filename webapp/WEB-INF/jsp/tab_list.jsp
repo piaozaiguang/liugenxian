@@ -75,7 +75,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 			        <tr>
 			            <th><label class="uk-icon-music"></label>歌名/曲名</th>
 			            <th><label class="uk-icon-microphone"></label>艺术家</th>
-			            <th>供谱者</th>
+			            <th><label class="uk-icon-edit"></label>供谱者</th>
 			            <th><label class="uk-icon-eye"></label>浏览量</th>
 			        </tr>
 			    </thead>
