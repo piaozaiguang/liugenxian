@@ -8,9 +8,11 @@
 <title>吉他文章列表|六根弦</title>
 <link rel="stylesheet" href="/css/uikit.min.css" />
 <link rel="stylesheet" href="/css/addons/uikit.addons.min.css" />
+<link rel="stylesheet" href="/css/nprogress.css" />
 <script src="/js/jquery.min.js"></script>
 <script src="/js/uikit.min.js"></script>
 <script src="/js/addons/sticky.min.js"></script>
+<script src="/js/nprogress.js"></script>
 <style type="text/css">
 label{margin-right:3px;}
 .liugenxian {
@@ -19,7 +21,10 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 </style>
 <script type="text/javascript">
 (function($){
-	$(function() {
+	$(document).ready(function() {
+		NProgress.start();
+	});
+	$(window).load(function(){
 		$(window).scroll(function(){
 		    if ($(window).scrollTop()>200){
 		        $("#goTop").fadeIn(300);
@@ -27,6 +32,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 		        $("#goTop").fadeOut(200);
 		    }
 		});
+		NProgress.done();
 	});
 })(jQuery);
 </script>
