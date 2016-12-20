@@ -67,11 +67,6 @@
 		<servlet-name>liugenxianServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<!-- Device Resolver Request Filter -->
-	<filter>
-		<filter-name>deviceResolverRequestFilter</filter-name>
-		<filter-class>org.springframework.mobile.device.DeviceResolverRequestFilter</filter-class>
-	</filter>
 	<!-- loggingFilter -->
 	<filter>
 		<filter-name>loggingFilter</filter-name>

@@ -10,7 +10,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<webapp.context>/</webapp.context>
 		<org.springframework.version>4.3.4.RELEASE</org.springframework.version>
-		<org.springframework.mobile.version>1.1.0.RELEASE</org.springframework.mobile.version>
 	</properties>
 	<name>liugenxian</name>
 	<scm>
@@ -151,12 +150,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework.version}</version>
-		</dependency>
-		<!-- org.springframework.mobile -->
-		<dependency>
-			<groupId>org.springframework.mobile</groupId>
-			<artifactId>spring-mobile-device</artifactId>
-			<version>${org.springframework.mobile.version}</version>
 		</dependency>
 		<!-- security -->
 		<dependency>
