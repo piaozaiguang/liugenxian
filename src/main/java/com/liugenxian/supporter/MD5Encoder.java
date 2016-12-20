@@ -6,19 +6,18 @@
  */
 package com.liugenxian.supporter;
 
-import org.springframework.dao.DataAccessException;
-import org.springframework.security.authentication.encoding.PasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class MD5Encoder implements PasswordEncoder {
 
 	@Override
-	public String encodePassword(String origPwd, Object salt) throws DataAccessException {
-		return MD5.getMD5ofStr(origPwd);
+	public String encode(CharSequence rawPassword) {
+		return MD5.getMD5ofStr(rawPassword.toString());
 	}
 
 	@Override
-	public boolean isPasswordValid(String encPwd, String origPwd, Object salt) throws DataAccessException {
-		return encPwd.equals(encodePassword(origPwd, salt));
+	public boolean matches(CharSequence rawPassword, String encodedPassword) {
+		return encodedPassword.equals(encode(rawPassword));
 	}
 
 }
