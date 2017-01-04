@@ -65,6 +65,9 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	<div class="uk-grid">
 		<div class="uk-width-4-5">
 			${detail.content}
+			<p>
+				<img src="/imgs/wechat_pay.png" title="微信打赏">
+			</p>
 			<!-- 多说评论框 start -->
 			<div class="ds-thread" data-thread-key="${detail.tabNo}" data-title="${detail.title} 吉他谱" data-url="${serverName}/tab/detail/${detail.tabNo}"></div>
 			<!-- 多说评论框 end -->

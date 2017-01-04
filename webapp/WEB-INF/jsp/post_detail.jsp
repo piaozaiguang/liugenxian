@@ -56,6 +56,9 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    <p>
 		    ${postDetail.content}
 		</p>
+		<p>
+			<img src="/imgs/wechat_pay.png" title="微信打赏">
+		</p>
 	</article>
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="${postDetail.postNo}" data-title="${postDetail.title}" data-url="${serverName}post/detail/${postDetail.postNo}"></div>
