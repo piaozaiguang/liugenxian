@@ -45,7 +45,7 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 	    	<li <c:if test="${tabCategory == 'FINGER'}">class="uk-active"</c:if>><a href="/tab/list?tabCategory=FINGER"><label class="uk-icon-music"></label>指弹谱</a></li>
 	    	<li <c:if test="${tabCategory == 'SONG'}">class="uk-active"</c:if>><a href="/tab/list?tabCategory=SONG"><label class="uk-icon-microphone"></label>弹唱谱</a></li>
     	</ul>
-    	<!-- 
+    	<!--
     	<div class="uk-navbar-center">
     		<div class="uk-navbar-content">
     			<form class="uk-form uk-display-inline-block">
@@ -68,22 +68,6 @@ font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, To
 			<p>
 				<img src="/imgs/wechat_pay.png" title="微信打赏">
 			</p>
-			<!-- 多说评论框 start -->
-			<div class="ds-thread" data-thread-key="${detail.tabNo}" data-title="${detail.title} 吉他谱" data-url="${serverName}/tab/detail/${detail.tabNo}"></div>
-			<!-- 多说评论框 end -->
-			<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-			<script type="text/javascript">
-			var duoshuoQuery = {short_name:"liugenxian"};
-				(function() {
-					var ds = document.createElement('script');
-					ds.type = 'text/javascript';ds.async = true;
-					ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-					ds.charset = 'UTF-8';
-					(document.getElementsByTagName('head')[0] 
-					 || document.getElementsByTagName('body')[0]).appendChild(ds);
-				})();
-			</script>
-			<!-- 多说公共JS代码 end -->
 		</div>
 		<div class="uk-width-1-5 uk-margin" style="top:100px;">
 			<table class="uk-table">
